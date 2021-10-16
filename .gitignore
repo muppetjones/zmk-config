@@ -1,1 +1,8 @@
 *.uf2
+zephyr
+zmk
+modules
+tools
+build
+.west
+.DS_Store
