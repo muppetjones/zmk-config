@@ -2,8 +2,6 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: muppetjones
-      url-base: https://github.com/muppetjones
   projects:
     - name: zmk
       remote: zmkfirmware
