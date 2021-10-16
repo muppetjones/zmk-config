@@ -1,0 +1,50 @@
+/*
+ * Copyright (c) 2021 Stephen J. Bush
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#include "combos.dtsi"
+
+#define DEFAULT 0
+#define QWERTY 1
+#define LOWER 2
+#define RAISE 3
+#define NAV 4
+#define ADJUST 5
+
+/ {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <125>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        hy: behavior_hyper {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HYPER_MOD";
+            #binding-cells = <1>;
+            tapping-term-ms = <200>;
+            // quick_tap_ms = <0>;
+            flavor = "hold-preferred";
+            bindings = LS(LC(LA(LGUI))), <&kp>;
+        };
+        td: behavior_tap_dance_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_DANCE";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            // quick_tap_ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&mo>, <&tog>;
+        };
+    };
+};

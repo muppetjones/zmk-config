@@ -33,5 +33,10 @@ KEY POSITIONS
            key-positions = <26 27>;
            bindings = <&kp TAB>;
        };
+       combo_capslock {
+           timeout-ms = <40>;
+           key-positions = <5 15>;
+           bindings = <&kp CAPS>;
+       };
     };
 };

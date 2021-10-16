@@ -23,7 +23,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <125>;
+            tapping-term-ms = <175>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -40,13 +40,12 @@
 // |       |       |       |       |       | ----- |       |       |       |       |       |
 //                         |       |       | ----- |       |       |
 
-
+        default_layer {
 // -----------------------------------------------------------------------------------------
 // |   Q   |   W   |   F   |   P   |   B   | ----- |   J   |   L   |   U   |   Y   |  ' "  |
 // |   A   |   R   |   S   |   T   |   G   | ----- |   M   |   N   |   E   |   I   |   O   |
 // |   R   |   X   |   C   |   D   |   V   | ----- |   K   |   H   |  , <  |  . >  |  / ?  |
 //                         |LOW_TAB|RAI_ENT| ----- |NAV_SPC| HY_ESC|
-        default_layer {
             bindings = <
 &kp Q       &kp W       &kp F       &kp P       &kp B       &kp J   &kp L       &kp U       &kp Y       &kp APOS
 &hm LGUI A  &hm LALT R  &hm LCTL S  &hm LSFT T  &kp G       &kp M   &hm RSFT N  &hm RCTL E  &hm LALT I  &hm RGUI O
@@ -55,12 +54,12 @@
             >;
         };
 
+        qwerty_layer {
 // -----------------------------------------------------------------------------------------
 // |   Q   |   W   |   E   |   R   |   T   | ----- |   Y   |   U   |   I   |   O   |   P   |
 // |   A   |   X   |   D   |   F   |   G   | ----- |   H   |   J   |   K   |   L   |  ' "  |
 // |   Z   |   X   |   C   |   V   |   B   | ----- |   N   |   M   |  , <  |  . >  |  / ?  |
 //                         |       |       | ----- |       |       |
-        qwerty_layer {
             bindings = <
 &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y   &kp U       &kp I       &kp O       &kp P
 &hm LGUI A  &hm LALT S  &hm LCTL D  &hm LGUI F  &kp G       &kp H   &hm RSFT J  &hm RCTL K  &hm LALT L  &hm RGUI QUOT
@@ -68,41 +67,42 @@
                                     &trans      &trans      &trans  &trans
             >;
         };
+
+        lower_layer {
 // -----------------------------------------------------------------------------------------
 // |       |       |       |       |       | ----- |  ` ~  |  7 &  |  8 *  |  9 (  |  \ |  |
-// | LGUI  | LALT  | LCTL  | LSFT  |       | ----- |  - _  |  4 _  |  5 %  |  6 ^  |  ; :  |
-// |       |       |       |       |       | ----- |  = +  |  1 !  |  2 @  |  3 #  |  , <  |
-//                         |       |   .   | ----- |       |   .   |
+// | LGUI  | LALT  | LCTL  | LSFT  |  _    | ----- |  - _  |  4 _  |  5 %  |  6 ^  |  ; :  |
+// |       |       |       |       |  , <  | ----- |  = +  |  1 !  |  2 @  |  3 #  |  . >  |
+//                         |       |       | ----- |       |  0 )  |
 // NOTE: Consider "&tog LOWER" instead of "&kp GRAVE"
-        lower_layer {
             bindings = <
-&none       &none       &none       &none       &none       &kp GRAVE   &kp N7  &kp N8  &kp N9  &kp BSLH
-&kp LGUI    &kp LALT    &kp LCTL    &kp LSFT    &kp CAPS    &kp MINUS   &kp N4  &kp N5  &kp N6  &kp SEMI
-&none       &none       &none       &kp DOT       &none       &kp EQUAL   &kp N1  &kp N2  &kp N3  &kp COMMA
-                                    &trans      &mo ADJUST  &kp SPACE   &kp N0
+&none       &none       &kp LPAR      &kp RPAR      &none       &kp GRAVE   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp BSLH
+&kp LGUI    &kp LALT    &hm LCTL LBKT &hm LSFT RBKT &kp UNDER   &kp MINUS   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp SEMI
+&none       &none       &kp LBRC      &kp RBRC      &kp COMMA   &kp EQUAL   &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp DOT
+                                      &trans        &mo ADJUST  &kp SPACE   &kp N0
             >;
         };
 
+        raise_layer {
 // -----------------------------------------------------------------------------------------
-// |       |       |       |       |       | ----- |DEFAULT|   (   |   )   |       |       |
-// | LGUI  | LALT  | LCTL  | LSFT  |       | ----- |QWERTY |   [   |   ]   |       |       |
+// |       |       |       |       |  CAPS | ----- |   ~   |   (   |   )   |       |       |
+// | LGUI  | LALT  | LCTL  | LSFT  |       | ----- |   _   |   [   |   ]   |       |       |
 // |       |       |       |       |       | ----- |   +   |   {   |   }   |       |       |
 //                         |  TAB  |       | ----- | BSPC  |  DEL  |
-        raise_layer {
             bindings = <
-&none       &none       &none       &none       &none       &kp TILDE   &kp LPAR  &kp RPAR  &none  &trans
+&none       &none       &none       &none       &kp CAPS    &kp TILDE   &kp LPAR  &kp RPAR  &none  &trans
 &kp LGUI    &kp LALT    &kp LCTL    &kp LSFT    &none       &kp UNDER   &kp LBKT  &kp RBKT  &none  &trans
 &none       &none       &none       &none       &none       &kp PLUS    &kp LBRC  &kp RBRC  &none  &trans
                                     &mo ADJUST  &trans      &kp SPACE   &kp DEL
             >;
         };
 
+        nav_layer {
 // -----------------------------------------------------------------------------------------
 // |       |       |   :   |       |       | ----- | PG_UP | HOME  |       |       |  END  |
 // | LGUI  | LALT  | LCTL  | LSFT  |       | ----- | PG_DN | LEFT  | DOWN  |  UP   | RIGHT |
 // |       |       |       |       |       | ----- |       |       |       |       |       |
 //                         |  TAB  |       | ----- |       |       |
-        nav_layer {
             bindings = <
 &trans      &trans      &kp COLON   &none       &none       &kp PG_UP  &kp HOME  &none    &none  &kp END
 &kp LGUI    &kp LALT    &kp LCTL    &kp LSFT    &none       &kp PG_DN  &kp LEFT  &kp DOWN &kp UP &kp RIGHT
@@ -111,17 +111,17 @@
             >;
         };
 
-// -----------------------------------------------------------------------------------------
-// | BOOTL |  F1   |  F2   |  F3   |  F4   | ----- |  |   (   |   )   |       |       |
-// | RESET |  F5   |  F6   |  F7   |  F8   | ----- |   _   |   [   |   ]   |       |       |
-// |       |  F9   |  F10  |  F11  |  F12  | ----- |   +   |   {   |   }   |       |       |
-//                         |  TAB  |       | ----- | BSPC  |  DEL  |
         adjust_layer {
+// -----------------------------------------------------------------------------------------
+// | BOOTL |       |       |  BT 1 |  BT O | ----- |DEFAULT|QWERTY |       |  BRIU |  VOLU |
+// | RESET |       |       |  BT 2 |BT NXT | ----- |       |       |       |  BRID |  VOLD |
+// | BT CLR|       |       |  BT 3 |BT PRV | ----- |  PREV |  NEXT |       |       |  MUTE |
+//                         |       |       | ----- |  PLAY |  STOP |
             bindings = <
-&bootloader &none  &none  &bt BT_SEL 1  &bt BT_SEL 0     &to DEFAULT &none    &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP
-&reset      &none  &none  &bt BT_SEL 2  &bt BT_NXT       &to QWERTY  &kp C_PP &kp C_STOP   &kp C_PREV   &kp C_NEXT
-&bt BT_CLR  &none  &none  &bt BT_SEL 3  &bt BT_PRV       &none       &none    &none        &kp C_BRI_DN &kp C_BRI_UP
-                          &trans        &trans           &none       &none
+&bootloader &none  &none  &bt BT_SEL 1  &bt BT_SEL 0     &to DEFAULT &to QWERTY  &none  &kp C_BRI_UP &kp C_VOL_UP
+&reset      &none  &none  &bt BT_SEL 2  &bt BT_NXT       &none       &none       &none  &kp C_BRI_DN &kp C_VOL_DN
+&bt BT_CLR  &none  &none  &bt BT_SEL 3  &bt BT_PRV       &kp C_PREV  &kp C_NEXT  &none  &none        &kp C_MUTE
+                          &trans        &trans           &kp C_PP    &kp C_STOP
             >;
         };
     };
