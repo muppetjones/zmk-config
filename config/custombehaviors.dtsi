@@ -28,15 +28,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        hy: behavior_hyper {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HYPER_MOD";
-            #binding-cells = <1>;
-            tapping-term-ms = <200>;
-            // quick_tap_ms = <0>;
-            flavor = "hold-preferred";
-            bindings = LS(LC(LA(LGUI))), <&kp>;
-        };
         td: behavior_tap_dance_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "TAP_DANCE";
