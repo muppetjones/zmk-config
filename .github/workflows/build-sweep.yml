@@ -1,7 +1,13 @@
-on: [push, pull_request, workflow_dispatch]
 
-name: Build
-
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'config/ferris**'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+name: Build Sweep
 jobs:
   build:
     runs-on: ubuntu-latest

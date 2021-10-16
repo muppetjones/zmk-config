@@ -106,4 +106,5 @@
                    &none  &trans        &trans           &kp C_PP    &kp C_STOP  &none
             >;
         };
+    };
 };

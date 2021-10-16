@@ -13,7 +13,6 @@ KEY POSITIONS
 */
 
 #include <dt-bindings/zmk/keys.h>
-
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM) \
         combo_##NAME { \
             timeout-ms = <TERM>; \
