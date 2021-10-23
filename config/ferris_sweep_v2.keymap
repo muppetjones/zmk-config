@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#include "combos.dtsi"
+#include "combos-34.dtsi"
 
 #define DEFAULT 0
 #define QWERTY 1
@@ -77,9 +77,9 @@
 // NOTE: Consider "&tog LOWER" instead of "&kp GRAVE"
             bindings = <
 &none       &none       &kp LPAR      &kp RPAR      &none       &kp GRAVE   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp BSLH
-&kp LGUI    &kp LALT    &hm LCTL LBKT &hm LSFT RBKT &kp UNDER   &kp MINUS   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp SEMI
-&none       &none       &kp LBRC      &kp RBRC      &kp COMMA   &kp EQUAL   &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp DOT
-                                      &trans        &mo ADJUST  &kp SPACE   &kp N0
+&kp LGUI    &kp LALT    &hm LCTL LBKT &hm LSFT RBKT &kp UNDER   &kp MINUS   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp CMMA
+&none       &none       &kp LBRC      &kp RBRC      &kp PLUS    &kp EQUAL   &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp DOT
+                                      &trans        &trans      &kp SPACE   &kp N0
             >;
         };
 
