@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'config/ferris**'
+      - 'config/combos-34.dtsi'
+      - 'custombehaviors.dtsi'
   pull_request:
     branches: [main]
   workflow_dispatch:

@@ -3,6 +3,8 @@ on:
     branches: [main]
     paths:
       - 'config/corne**'
+      - 'config/combos-42.dtsi'
+      - 'custombehaviors.dtsi'
   pull_request:
     branches: [main]
   workflow_dispatch:
