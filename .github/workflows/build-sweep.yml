@@ -6,6 +6,7 @@ on:
       - 'config/ferris**'
       - 'config/combos-34.dtsi'
       - 'custombehaviors.dtsi'
+      - 'config/boards/shields/ferris_sweep_v2/**'
   pull_request:
     branches: [main]
   workflow_dispatch:
