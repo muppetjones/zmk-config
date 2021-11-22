@@ -29,6 +29,7 @@ KEY POSITIONS
             key-positions = <7 8>;
             bindings = <&kp SEMI>;
         };
+
         combo_tab {
            timeout-ms = <40>;
            key-positions = <31 32>;
@@ -41,4 +42,3 @@ KEY POSITIONS
             bindings = <&kp CAPS>;
        };
     };
-};
