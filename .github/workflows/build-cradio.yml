@@ -55,7 +55,7 @@ jobs:
           name: firmware
           path: cradio_left_nice_nano_v2.uf2
       - name: West Build (Cradio Right)
-        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=ferris_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=cradio_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
       - name: Cradio Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
