@@ -64,8 +64,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <2 3>;
+            then-layer = <5>;
         };
     };
 
@@ -112,7 +112,7 @@
 // NOTE: Consider "&tog LOWER" instead of "&kp GRAVE"
         lower_layer {
             bindings = <
-&none       &none     &kp LPAR      &kp RPAR      &none       &kp GRAVE   &kp N7  &kp N8  &kp N9  &kp BSLH
+&none       &kp GRAVE &kp LPAR      &kp RPAR      &none       &kp GRAVE   &kp N7  &kp N8  &kp N9  &kp BSLH
 &kp LGUI    &kp LALT  &hm LCTL LBKT &hm LSFT RBKT &none       &kp MINUS   &kp N4  &kp N5  &kp N6  &kp CMMA
 &none       &none     &kp LBRC      &kp RBRC      &none       &kp EQUAL   &kp N1  &kp N2  &kp N3  &kp DOT
                                     &trans        &trans  &kp SPACE   &kp N0
