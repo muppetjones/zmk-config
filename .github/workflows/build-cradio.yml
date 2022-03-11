@@ -3,13 +3,12 @@ on:
   push:
     branches: [main]
     paths:
-      - 'config/ferris**'
-      - 'config/boards/shields/ferris_sweep_v2/**'
+      - 'config/cradio**'
   pull_request:
     branches: [main]
   workflow_dispatch:
 
-name: Build Sweep
+name: Build Cradio
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -41,29 +40,29 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
-      - name: West Build (Ferris Left)
-        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=ferris_sweep_v2_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: Ferris DTS File
+      - name: West Build (Cradio Left)
+        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=cradio_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+      - name: Cradio DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/nice_nano_v2.dts.pre.tmp
-      - name: Ferris Left Kconfig file
+      - name: Cradio Left Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 ferris_left_nice_nano_v2.uf2
-      - name: Archive (Ferris Left)
+        run: cp build/zephyr/zmk.uf2 cradio_left_nice_nano_v2.uf2
+      - name: Archive (Cradio Left)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: ferris_left_nice_nano_v2.uf2
-      - name: West Build (Ferris Right)
-        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=ferris_sweep_v2_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+          path: cradio_left_nice_nano_v2.uf2
+      - name: West Build (Cradio Right)
+        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=ferris_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
-      - name: Ferris Right Kconfig file
+      - name: Cradio Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 ferris_right_nice_nano_v2.uf2
-      - name: Archive (Ferris Right)
+        run: cp build/zephyr/zmk.uf2 cradio_right_nice_nano_v2.uf2
+      - name: Archive (Cradio Right)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: ferris_right_nice_nano_v2.uf2
+          path: cradio_right_nice_nano_v2.uf2
