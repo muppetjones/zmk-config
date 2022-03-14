@@ -24,8 +24,6 @@
 		>;
 	};
 
-qt;va
-
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-direct";
 		label = "KSCAN";
