@@ -19,6 +19,7 @@
     continue-list = <UNDERSCORE MINUS>;
 };
 
+/*
 &kscan0 {
     input-gpios
     = <&pro_micro  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
@@ -40,6 +41,7 @@
     , <&pro_micro  9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
     ;
 };
+*/
 
 / {
     /* Adjusted Cradio pin arrangement */
