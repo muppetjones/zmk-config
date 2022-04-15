@@ -33,7 +33,7 @@ west build \
 -d build/left \
 -b nice_nano \
 -- \
--DSHIELD=ferris_sweep_v2_left \
+-DSHIELD=sweep_v2_left \
 -DZMK_CONFIG=${HOME}/dev/zmk-config/config
 ```
 
@@ -46,7 +46,7 @@ west build \
 -d build/right \
 -b nice_nano \
 -- \
--DSHIELD=ferris_sweep_v2_right \
+-DSHIELD=sweep_v2_right \
 -DZMK_CONFIG=${HOME}/dev/zmk-config/config
 ```
 
