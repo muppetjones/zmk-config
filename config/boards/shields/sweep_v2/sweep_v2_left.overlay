@@ -4,8 +4,4 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "ferris_sweep_v2.dtsi"
-
-&default_transform {
-	col-offset = <17>;
-};
+#include "sweep_v2.dtsi"
