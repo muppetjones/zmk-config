@@ -1,0 +1,8 @@
+file_format: "1"
+id: batreus44
+name: batreus44
+type: shield
+url: https://github.com/jpconstantineau/batreus44
+requires: [pro_micro]
+features:
+  - keys
