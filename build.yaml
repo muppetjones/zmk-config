@@ -26,3 +26,5 @@ include:
   - board: nice_nano_v2
     shield: sweep_v2_right
   - board: zaphod
+  - board: bluemicro840_v1
+    shield: batreus44
