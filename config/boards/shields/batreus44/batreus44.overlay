@@ -18,6 +18,7 @@
 #define R3 9
 #define R4 10
 #define R5 11
+
 #define S0 0
 #define S1 1
 #define S2 2
@@ -71,10 +72,10 @@
         rows = <4>;
         map = <
 // 2:L5   3:L4      4:L3      5:L2      6:L1      ╭────── 7:L0 ─────╮ 15:R1     18:R2     19:R3     20:R4     21:R5
-RC(S3,L5) RC(S3,L4) RC(S3,L3) RC(S3,L4) RC(S3,L5)                     RC(S3,R1) RC(S3,R2) RC(S3,R3) RC(S3,R4) RC(S3,R5) // 16
-RC(S2,L5) RC(S2,L4) RC(S2,L3) RC(S2,L4) RC(S2,L5)                     RC(S2,R1) RC(S2,R2) RC(S2,R3) RC(S2,R4) RC(S2,R5) // 10
-RC(S1,L5) RC(S1,L4) RC(S1,L3) RC(S1,L4) RC(S1,L5) RC(S1,L0) RC(S1,R0) RC(S1,R1) RC(S1,R2) RC(S1,R3) RC(S1,R4) RC(S1,R5) // 8
-RC(S0,L5) RC(S0,L4) RC(S0,L3) RC(S0,L4) RC(S0,L5) RC(S0,L0) RC(S0,R0) RC(S0,R1) RC(S0,R2) RC(S0,R3) RC(S0,R4) RC(S0,R5) // 9
+RC(S3,L5) RC(S3,L4) RC(S3,L3) RC(S3,L2) RC(S3,L1)                     RC(S3,R1) RC(S3,R2) RC(S3,R3) RC(S3,R4) RC(S3,R5) // 10
+RC(S2,L5) RC(S2,L4) RC(S2,L3) RC(S2,L2) RC(S2,L1)                     RC(S2,R1) RC(S2,R2) RC(S2,R3) RC(S2,R4) RC(S2,R5) // 10
+RC(S1,L5) RC(S1,L4) RC(S1,L3) RC(S1,L2) RC(S1,L1) RC(S1,L0) RC(S1,R0) RC(S1,R1) RC(S1,R2) RC(S1,R3) RC(S1,R4) RC(S1,R5) // 8
+RC(S0,L5) RC(S0,L4) RC(S0,L3) RC(S0,L2) RC(S0,L1) RC(S0,L0) RC(S0,R0) RC(S0,R1) RC(S0,R2) RC(S0,R3) RC(S0,R4) RC(S0,R5) // 9
         >;
     };
 };
